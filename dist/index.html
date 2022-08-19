@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <script>
+      var fun = function (doc, win) {
+      var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+              var clientWidth = docEl.clientWidth; 
+              console.log(clientWidth);
+              if (!clientWidth) return;
+              //这里是假设在750px宽度设计稿的情况下，1rem = 100px；
+              //可以根据实际需要修改
+              if(clientWidth>900){
+
+              }else{
+                docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
+              }
+              
+              
+          };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+  }
+  fun(document, window)
+    </script>
+    <script type="module" crossorigin src="./static/js/1660731372100-2f91aed3.js"></script>
+    <link rel="modulepreload" crossorigin href="./static/js/1660731372100-0b9ec5f3.js">
+    <link rel="modulepreload" crossorigin href="./static/js/1660731372100-505e23ee.js">
+    <link rel="stylesheet" href="./static/css/1660731372100-3472e6ba.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=AgELd1TL7Ng9EKLOArz5ugUryq0QxyuM&s=1"></script>
+    
+  </body>
+</html>
