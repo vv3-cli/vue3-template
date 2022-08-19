@@ -10,8 +10,7 @@ const router = createRouter({
         {
             path: "/index",
             name: "index",
-            component: () =>
-                import(/* webpackChunkName: "introduce" */ "./../views/index/index.vue")
+            component: () => import(/* webpackChunkName: "introduce" */ "./../views/index/index.vue")
         },
         {
             path: "/list",

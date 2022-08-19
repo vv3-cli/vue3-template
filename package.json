@@ -8,7 +8,7 @@
     "build:stag": "vite build  --mode staging",
     "build:test": "vite build  --mode development",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx ",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "prepare": "husky install"
   },
   "dependencies": {
