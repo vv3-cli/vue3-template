@@ -1,7 +1,8 @@
 import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
-
+import legacy from "@vitejs/plugin-legacy";
+import { createHtmlPlugin } from "vite-plugin-html";
 // https://vitejs.dev/config/
 export default ({ mode }) => {
     // 获取打包时间 给js css 加上
@@ -13,7 +14,14 @@ export default ({ mode }) => {
     console.log(mode);
 
     return defineConfig({
-        plugins: [vue()],
+        envDir: resolve(__dirname, "build"),
+        plugins: [
+            vue(),
+            legacy({
+                targets: ["Android > 39", "> 1%", "last 2 versions", "not IE 11"]
+            }),
+            createHtmlPlugin()
+        ],
         base: "./",
         resolve: {
             // 取一个别名
@@ -24,7 +32,7 @@ export default ({ mode }) => {
         build: {
             // 生产环境去除console minify terserOptions
             minify: "terser",
-
+            target: "es2015",
             terserOptions: {
                 compress: {
                     drop_console: mode !== "production" ? true : false,
@@ -60,6 +68,18 @@ export default ({ mode }) => {
                             return id.toString().split("node_modules/")[1].split("/")[0].toString();
                         }
                     }
+                }
+            }
+        },
+        server: {
+            host: "0.0.0.0",
+            port: "9527",
+            open: true,
+            proxy: {
+                "/api": {
+                    target: "https://mock.apifox.cn",
+                    changeOrigin: true,
+                    rewrite: (path) => path.replace(/^\/api/, "")
                 }
             }
         }

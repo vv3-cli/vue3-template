@@ -8,9 +8,9 @@
         </ul>
         <p>首页路由功能:</p>
         <ul>
-            <li>
+            <div class="button">
                 <router-link :to="{ path: '/list' }">点击进入列表</router-link>
-            </li>
+            </div>
         </ul>
     </div>
 </template>
@@ -20,7 +20,7 @@ import { getAuthor } from "@/request/api/index";
 import { ref } from "vue";
 const List = ref([]);
 
-let a = `22`;
+let a = "两只老虎";
 
 console.log(a);
 

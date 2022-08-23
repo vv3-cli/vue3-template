@@ -3,16 +3,10 @@ import axios from "axios";
 // 创建axios的一个实例
 const instance = axios.create({
     baseURL: import.meta.env.VITE_APP_API_URL, // 接口统一域名
+    //  baseURL: "https://mock.apifox.cn/",
     timeout: 6000, // 设置超时
     headers: {
-        "Content-Type": "application/json;charset=UTF-8;",
-        Authority: "api.juejin.cn",
-        Method: "POST",
-        Accept: "*/*",
-        // 'Origin': 'https://juejin.cn',
-
-        Path: "/recommend_api/v1/article/recommend_cate_feed?aid=2608&uuid=7116732812531107332"
-        // :path: /recommend_api/v1/article/recommend_cate_feed?aid=2608&uuid=7116732812531107332
+        "Content-Type": "application/json;charset=UTF-8;"
     }
 });
 // 请求拦截器
