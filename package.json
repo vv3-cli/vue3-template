@@ -8,7 +8,7 @@
     "build:stag": "vite build  --mode staging",
     "build:test": "vite build  --mode development",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx ",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -18,20 +18,14 @@
     "vue-router": "^4.1.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^15.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "@typescript-eslint/parser": "^5.5.0",
-    "@vitejs/plugin-vue": "^3.0.0",
-    "babel-eslint": "^10.1.0",
-    "commitlint": "^17.0.3",
     "eslint": "^7.32.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-html": "^6.2.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^7.17.0",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
     "prettier": "^2.3.2",
     "terser": "^5.14.2",
     "vite": "^3.0.0"
